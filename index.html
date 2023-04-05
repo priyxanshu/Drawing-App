@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawing</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-container">
+        <ul>
+          <li>Shapes</li>
+          <li class="rectangle">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/9369/9369799.png"
+              alt="Rectangle"
+              class="img"
+            /><span> Rectangle</span>
+          </li>
+          <li class="circle">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3515/3515278.png"
+              alt="circle"
+              class="img"
+            /><span>Circle</span>
+          </li>
+          <li class="triangle">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/649/649738.png"
+              alt="triangle"
+              class="img"
+            /><span> Triangle</span>
+          </li>
+          <li>Options</li>
+
+          <li class="brush">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/103/103414.png"
+              alt="brush"
+            />
+            <span>Brush</span>
+          </li>
+          <li class="eraser">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/8385/8385576.png"
+              alt="eraser"
+            />
+            <span>Eraser</span>
+          </li>
+          <li class="fill-color">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/815/815478.png"
+              alt="fill-color"
+            />
+            <span>Fill Color</span>
+          </li>
+          <li><input type="range" id="size-slider" /></li>
+          <li>Colors</li>
+          <li>
+            <div class="color-options">
+              <div class="white"></div>
+              <div class="black"></div>
+              <div class="red"></div>
+              <div class="lightgreen"></div>
+              <div class="blue"></div>
+            </div>
+          </li>
+          <li><button id="btn1" type="button">Clear Canvas</button></li>
+          <li><button id="btn2" type="button">Save as image</button></li>
+        </ul>
+      </div>
+      <div class="right-container">
+        <canvas></canvas>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const canvas = document.querySelector("canvas");
+    ctx = canvas.getContext("2d");
+
+
+
+    
+    let isDrawing = false;
+
+    window.addEventListener("load", () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    });
+
+    const startDraw = () => {
+      isDrawing = true;
+      ctx.beginPath();
+      ctx.lineWidth = 5;
+    };
+
+    const drawing = (e) => {
+      if (!isDrawing) return;
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke();
+    };
+    canvas.addEventListener("mousedown", startDraw);
+    canvas.addEventListener("mousemove", drawing);
+    canvas.addEventListener("mouseup", () => (isDrawing = false));
+  </script>
+</html>

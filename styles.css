@@ -1,0 +1,119 @@
+body {
+  background: linear-gradient(90deg, rgb(110, 110, 160), rgb(58, 58, 190));
+  font-family: sans-serif;
+}
+.container {
+  margin: 50px auto;
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+}
+.left-container {
+  width: 18%;
+  height: 600px;
+  background-color: white;
+  border-radius: 10px;
+}
+.right-container {
+  width: 80%;
+  height: 600px;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 2%;
+}
+.left-container ul li {
+  list-style: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.left-container ul li img {
+  width: 22px;
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+}
+.color-options {
+  display: flex;
+  flex-direction: row;
+}
+.black {
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  margin-right: 10px;
+}
+.white {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  margin-right: 10px;
+}
+
+.red {
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  margin-right: 10px;
+}
+.lightgreen {
+  background-color: lightgreen;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  margin-right: 10px;
+}
+.blue {
+  background-color: rgb(81, 65, 220);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  margin-right: 10px;
+}
+#btn1,
+#btn2 {
+  padding: 10px;
+  width: 70%;
+  border-radius: 5px;
+  border: 1px solid grey;
+  color: rgb(143, 137, 137);
+  cursor: pointer;
+}
+#btn1 {
+  background-color: white;
+}
+
+#btn2 {
+  margin-top: -10px;
+  background-color: rgb(81, 65, 220);
+  border: none;
+}
+#size-slider {
+  cursor: pointer;
+}
+.triangle:hover,
+.rectangle:hover,
+.circle:hover,
+.brush:hover,
+.eraser:hover,
+.fill-color:hover {
+  color: rgb(39, 39, 195);
+}
+.black:hover,
+.white:hover,
+.lightgreen:hover,
+.red:hover,
+.blue:hover {
+  border: 3px solid gray;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+}
